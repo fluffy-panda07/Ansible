@@ -1,0 +1,18 @@
+ - name: Deploy to Tomcat
+   hosts: web
+   become: yes
+   
+   tasks:
+   
+    -name: copy WAR file to Tomcat
+     copy:
+      src: '/var/snap/jenkins/5042/workspace/AnsibleApp/target/Ansible.war'
+      dest: '/opt/tomcat/webapps/Ansible.war'
+      remote_src: no
+      
+    - name: Restart Tomcat
+      shell: |
+       /opt/tomcat/bin/shutdown.sh || true
+       sleep 5 
+       /opt/tomcat/bin/startup.sh
+       
