@@ -3,6 +3,8 @@ pipeline{
 	environment{
 	LANG='en_US.UTF-8'
 	LC_ALL='en_US.UTF-8'}
+	tools{
+		maven 'Maven'}
 	stages{
 		stage('Checkout'){
 			steps{ git branch:'master',url:'https://github.com/fluffy-panda07/Ansible.git'}
