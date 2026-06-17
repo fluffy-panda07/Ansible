@@ -5,7 +5,7 @@ pipeline{
 	LC_ALL='en_US.UTF-8'}
 	stages{
 		stage('Checkout'){
-			steps{ git branch:'master',url:''}
+			steps{ git branch:'master',url:'https://github.com/fluffy-panda07/Ansible.git'}
 			}
 		stage('Build'){
 			steps{ sh 'mvn clean compile'}
