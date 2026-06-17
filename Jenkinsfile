@@ -10,7 +10,7 @@ pipeline{
 			steps{ git branch:'master',url:'https://github.com/fluffy-panda07/Ansible.git'}
 			}
 		stage('Build'){
-			steps{ sh 'mvn clean compile'}
+			steps{ sh 'mvn clean package'}
 			}
 		stage('Test'){
 			steps{ sh 'mvn test' }
